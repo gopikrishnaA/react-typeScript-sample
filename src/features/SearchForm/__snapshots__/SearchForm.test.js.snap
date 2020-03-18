@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm initial load Should render on initial load 1`] = `
+<form
+  className="d-flex align-items-start ml-3"
+  method="post"
+  onSubmit={[Function]}
+>
+  <div
+    className="d-flex flex-column justify-content-start search-form"
+  >
+    <input
+      className="mr-2 search-input border-0"
+      onChange={[Function]}
+      placeholder="ex. pizza"
+      type="text"
+      value="12"
+    />
+     
+    <i
+      className="fas fa-search i-search"
+      onClick={[Function]}
+    />
+  </div>
+</form>
+`;

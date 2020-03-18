@@ -65,7 +65,7 @@ const results:IObject = {
     baseUri: "https://spoonacular.com/recipeImages/",
     offset: 0,
     number: 7,
-    totalResults: 33,
+    totalResults: 1,
     processingTimeMs: 156,
     expires: 1566422535098,
     isStale: false

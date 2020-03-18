@@ -5,7 +5,7 @@ class PrintPage extends Component<{items: IShopItem[], customItems: IShopItem[]}
   render() {
     const allItems = this.props.items.concat(this.props.customItems);
     return (
-      <table style={{margin: '30px', width: "100%", fontSize: "20px"}}>
+      <table data-test={'table'} style={{margin: '30px', width: "100%", fontSize: "20px"}}>
         <thead>
           <tr>
           <th>Amount</th>

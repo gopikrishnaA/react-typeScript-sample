@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Form } from "reactstrap";
 
 import { SearchContext } from "../../contexts/SearchContext";
@@ -6,19 +6,19 @@ import { SearchContext } from "../../contexts/SearchContext";
 import "./SearchForm.scss";
 
 const SearchForm: React.FC = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = React.useState("");
   const [showError, setShowError] = useState(false);
   const { updateQuery } = useContext(SearchContext);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const timer = setTimeout(() => {
       if (
         value.length > 1 &&
         inputRef &&
         inputRef.current &&
         inputRef.current.value === value
-      ) {
+        ) {
         // user stop typing at least for 1000 ms
         if (value.length < 3) {
           setShowError(true);

@@ -1,6 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 import configureStore from "redux-mock-store";
+import { Spinner } from "reactstrap";
 import * as ReactReduxHooks from "../../hooks/react-redux";
 
 import { Recipe } from "./Recipe";
@@ -16,13 +17,13 @@ describe("Recipe", () => {
   const mockUseEffect = () => {
     useEffect.mockImplementationOnce(f => f());
   };
+  let props = { match: { params: { recipe_id: recipeId } } };
 
   beforeEach(() => {
     useEffect = jest.spyOn(React, "useEffect");
     mockUseEffect();
     mockUseEffect();
 
-    const props = { match: { params: { recipe_id: recipeId } } };
 
     store = configureStore()({
       data: recipies[recipeId],
@@ -50,5 +51,39 @@ describe("Recipe", () => {
 
   it("should render Ingredients component if recipe is loaded", () => {
     expect(wrapper.find(Ingredients)).toHaveLength(1);
+  });
+
+  it("should render when on loading", () => {
+    props = { match: { params: { recipe_id: undefined } } };
+    store = configureStore()({
+      data: recipies[559251],
+      isLoading: true,
+      error: null
+    });
+    
+    wrapper = shallow(<Recipe store={store} {...props} />);
+    expect(wrapper.find(Spinner).props().children).toEqual("Loading...")
+  });
+ 
+  it("should render when error triggers", () => {
+    store = configureStore()({
+      data: null,
+      isLoading: false,
+      error: { message: "error" }
+    });
+    
+    wrapper = shallow(<Recipe store={store} {...props} />);
+    expect(wrapper.find(".recipe").props().children).toEqual("error")
+  });
+ 
+  it("should not render when data not exist", () => {
+    store = configureStore()({
+      data: null,
+      isLoading: false,
+      error: null
+    });
+    
+    wrapper = shallow(<Recipe store={store} {...props} />);
+    expect(wrapper.instance()).toBeNull();
   });
 });

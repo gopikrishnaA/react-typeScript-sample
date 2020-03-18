@@ -65,7 +65,6 @@
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
-    "react-test-renderer": "^16.9.0",
     "reactstrap": "^8.0.1",
     "redux": "^4.0.4",
     "redux-mock-store": "^1.5.3",
@@ -92,7 +91,7 @@
     "start": "node server.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom --verbose",
-    "test:coverage": "node scripts/test.js --env=jsdom --verbose --coverage",
+    "test:coverage": "jest --watch-all --collectCoverage",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
@@ -112,6 +111,7 @@
     ]
   },
   "devDependencies": {
+    "react-test-renderer": "^16.13.0",
     "react-to-print": "^2.3.2"
   },
   "jest": {
@@ -144,7 +144,9 @@
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/src/hooks",
-      "<rootDir>/src/views"
+      "<rootDir>/src/views",
+      "<rootDir>/src/index.tsx",
+      "<rootDir>/src/store.js"
     ],
     "modulePaths": [],
     "moduleNameMapper": {

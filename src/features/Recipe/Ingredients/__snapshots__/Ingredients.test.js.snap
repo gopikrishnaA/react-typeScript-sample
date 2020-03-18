@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ingredients on start renders correctly 1`] = `
+<div
+  className="recipe-ings d-flex flex-wrap flex-row   "
+>
+  <div
+    className="d-flex align-items-center p-1 m-1"
+    onClick={[Function]}
+  >
+    <i
+      className="fas fa-cart-arrow-down mr-2 d-inline-block"
+      title="Add to Shop List"
+    />
+    1000
+     
+    $
+     
+    test
+  </div>
+</div>
+`;

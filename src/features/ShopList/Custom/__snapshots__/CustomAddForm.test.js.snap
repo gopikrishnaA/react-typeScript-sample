@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomAddForm renders correctly 1`] = `
+<form
+  className=""
+  onSubmit={[Function]}
+>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="name"
+    >
+      Name
+    </label>
+    <input
+      className="form-control"
+      name="name"
+      onChange={[Function]}
+      required={true}
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="name"
+    >
+      Amount
+    </label>
+    <input
+      className="form-control"
+      name="amount"
+      onChange={[Function]}
+      type="text"
+      value={0}
+    />
+  </div>
+  <div
+    className="form-group"
+  >
+    <label
+      className=""
+      htmlFor="name"
+    >
+      Unit
+    </label>
+    <input
+      className="form-control"
+      name="unit"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </div>
+  <button
+    aria-label={null}
+    className="btn btn-success"
+    onClick={[Function]}
+    type="submit"
+  >
+    Add
+  </button>
+  <button
+    aria-label={null}
+    className="ml-2 btn btn-danger"
+    onClick={[Function]}
+    type="button"
+  >
+    Cancel
+  </button>
+</form>
+`;

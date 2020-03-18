@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeItem renders correctly 1`] = `
+<table
+  data-test="table"
+  style={
+    Object {
+      "fontSize": "20px",
+      "margin": "30px",
+      "width": "100%",
+    }
+  }
+>
+  <thead>
+    <tr>
+      <th>
+        Amount
+      </th>
+      <th>
+        Unit
+      </th>
+      <th>
+        Name
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        1000
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        test
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;

@@ -44,7 +44,7 @@ const RecipeList: React.FC = () => {
   if (isLoading) {
     result = <Spinner />;
   } else if (error) {
-    result = <div>{error.message}</div>;
+    result = <div data-test={'errorMessage'}>{error.message}</div>;
   } else if (data && data.results) {
     result = data.results.map(item => (
       <RecipeItem recipe={item} key={item.id} />

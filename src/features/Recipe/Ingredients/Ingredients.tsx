@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch } from "../../../hooks/react-redux";
 
 import { addItem } from "../../ShopList/actions";
 import { IIngredient } from "../types";

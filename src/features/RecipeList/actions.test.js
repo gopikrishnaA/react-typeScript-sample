@@ -12,6 +12,16 @@ describe("RecipeList actions", () => {
     expect(search(query, offset)).toEqual(expectedAction);
   });
 
+  it("should create an action to search recipes with no offset", () => {
+    const query = "bread";
+    const expectedAction = {
+      type: "SEARCH",
+      query,
+      offset: 0
+    };
+    expect(search(query)).toEqual(expectedAction);
+  });
+
   it("should create an action searchSuccess ", () => {
     const data = [{ id: 1, title: "bread" }, { id: 2, title: "soup" }];
     const expectedAction = {

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomItems on start renders correctly 1`] = `
+<div
+  className="mt-3 custom-list"
+>
+  <h6>
+    Additionally: 
+  </h6>
+  <div
+    className="shop-item p-1 mb-2 d-flex align-items-center justify-content-between"
+  >
+    1000
+     
+    <span
+      className="ml-1 flex-1"
+    >
+      1
+       
+      test
+    </span>
+    <i
+      className="shop-item__remove fas fa-trash"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="shop-item p-1 mb-2 d-flex align-items-center justify-content-between"
+  >
+    10000
+     
+    <span
+      className="ml-1 flex-1"
+    >
+      10
+       
+      test10
+    </span>
+    <i
+      className="shop-item__remove fas fa-trash"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;

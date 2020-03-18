@@ -77,7 +77,7 @@ const ShopList: React.FunctionComponent = () => {
         {customFormAdd}
       </Modal>
       {customItemsListMemo}
-      <Button onClick={() => setIsShowModal(true)}>Add my Item</Button>
+      <Button data-test={"modalBtn"} onClick={() => setIsShowModal(true)}>Add my Item</Button>
     </>
   );
 

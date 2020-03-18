@@ -7,14 +7,14 @@ import { IItem, TLikesState } from "./types";
 
 const LikeButton: React.FC<{recipe: IItem}> = ({recipe}) => {
 
-  const likes = useSelector(({likes} : {likes: TLikesState}) => likes);
+  const likes: any = useSelector(({likes} : {likes: TLikesState}) => likes);
   const dispatch = useDispatch();
   const {addLike, removeLike} = {
     addLike: (item: IItem) => dispatch(addLikeItem(item)),
     removeLike: (id: number) => dispatch(removeLikeItem(id))
   }
 
-  const liked = likes.findIndex(item => item.id === recipe.id) !== -1;
+  const liked = likes.findIndex((item: IItem) => item.id === recipe.id) !== -1;
 
   const onLikeClickHanlder = () => {
     if (liked) {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
 
 import { ICustomAddFormProps } from "../types";
@@ -12,7 +12,7 @@ const CustomAddForm: React.FC<ICustomAddFormProps> = ({
   const [unit, setUnit] = useState("");
   const [amount, setAmount] = useState(0);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setName("");
     setUnit("");
     setAmount(0);

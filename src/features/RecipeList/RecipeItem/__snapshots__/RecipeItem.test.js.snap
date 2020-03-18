@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RecipeItem renders correctly 1`] = `
+<div
+  className="recipe-item p-2  d-flex align-items-start justify-content-start flex-column flex-lg-row "
+>
+  <img
+    alt="test"
+    height="40"
+    src="https://spoonacular.com/recipeImages/123-90x90.jpg"
+  />
+  <div>
+    test
+    <span>
+      123
+       min
+    </span>
+  </div>
+</div>
+`;

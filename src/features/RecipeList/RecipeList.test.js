@@ -8,6 +8,7 @@ import * as ReactReduxHooks from "../../hooks/react-redux";
 import { RecipeList } from "./RecipeList";
 import RecipeItem from "./RecipeItem/RecipeItem";
 import Paging from "./Paging/Paging";
+import { Spinner } from "reactstrap";
 
 
 describe("RecipeList", () => {
@@ -46,6 +47,10 @@ describe("RecipeList", () => {
     wrapper = shallow(<RecipeList store={store} />);
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+    store.clearActions();
+  })
   describe("on start", () => {
     it("dispatch search action to store", () => {
       const actions = store.getActions();
@@ -60,4 +65,43 @@ describe("RecipeList", () => {
   it("should render Paging component if data.results is not empty", () => {
     expect(wrapper.find(Paging)).toHaveLength(1);
   });
+  it("dispatch search action to store with offset 0", () => {
+    wrapper.find(Paging).props().pageChangedHandler('next');
+    const actions = store.getActions();
+    expect(actions).toEqual([{ type: "SEARCH", query: "soup", offset: 0 },
+    { type: "SEARCH", query: "soup", offset: 7 }]);
+  });
+
+  it("dispatch search action to store with offset 7", () => {
+    store = configureStore()({
+      data: results[7],
+      isLoading: false,
+      error: null
+    });
+    wrapper = shallow(<RecipeList store={store} />);
+    wrapper.find(Paging).props().pageChangedHandler('prev');
+    const actions = store.getActions();
+    expect(actions).toEqual([{ type: "SEARCH", query: "soup", offset: 0 },
+    { type: "SEARCH", query: "soup", offset: 0 }]);
+  }); 
+
+  it("should load the spinner", () => {
+    store = configureStore()({
+      data: [],
+      isLoading: true,
+      error: null
+    });
+    wrapper = shallow(<RecipeList store={store} />);
+    expect(wrapper.find(Spinner)).toHaveLength(1);
+  }); 
+  it("should load the error message", () => {
+    store = configureStore()({
+      data: [],
+      isLoading: false,
+      error: {message: 'error'}
+    });
+    wrapper = shallow(<RecipeList store={store} />);
+    expect(wrapper.find('[data-test="errorMessage"]').props().children).toEqual('error');
+  }); 
+
 });
